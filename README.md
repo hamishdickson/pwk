@@ -1,6 +1,6 @@
 # playing with kafka
 
-## some noob notes and definitions:
+## some disorganised noob notes and definitions:
 
 *def message*: unit of data - kafka treats these as an array of bytes. can have some metadata (key, also a byte array)
 
@@ -26,4 +26,20 @@ each partition can be hosted on a different server
 
 *def consumer group*: set of consumers which together consume a topic
 
-*def broker*: single kafka server
+*def broker*: single kafka server. designed to work as part of a cluster. One broker will be the controller (assigning partitions and monitoring for failures)
+
+messages persist for some retention period (eg 7 days) or the topic reaches a certain size
+
+*def mirror maker*: a tool used to copy the messages in kafka to another cluster.
+
+
+## Zookeeper
+
+Download at http://www.apache.org/dyn/closer.cgi/zookeeper/
+
+
+## Kafka download
+
+https://kafka.apache.org/downloads
+
+Note: flink is on scala 2.11 at the moment
